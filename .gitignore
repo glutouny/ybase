@@ -35,5 +35,6 @@ target
 *.war
 *.ear
 *.swp
+*.iml
 datanucleus.log
 /bin/
