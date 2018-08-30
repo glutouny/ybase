@@ -6,7 +6,7 @@ import java.io.UnsupportedEncodingException;
  * @author 杨黎
  * @Title ChineseCharToEnUtil
  * @description 获取中文
- * @DATE 2018/6/8  11:03
+ * @DATE 2018/8/30
  */
 public class ChineseCharToEnUtil {
     private final static int[] li_SecPosValue = { 1601, 1637, 1833, 2078, 2274,
