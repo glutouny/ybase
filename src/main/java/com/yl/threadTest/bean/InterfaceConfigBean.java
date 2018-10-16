@@ -1,4 +1,4 @@
-package com.yl.threadTest;
+package com.yl.threadTest.bean;
 
 /**
  * Title InterfaceConfigBean
