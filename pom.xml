@@ -23,6 +23,11 @@
             <artifactId>commons-codec</artifactId>
             <version>1.10</version>
         </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
         <!--邮件-->
         <dependency>
             <groupId>javax.mail</groupId>
@@ -34,6 +39,7 @@
             <artifactId>commons-email</artifactId>
             <version>1.4</version>
         </dependency>
+
     </dependencies>
 
     <build>
