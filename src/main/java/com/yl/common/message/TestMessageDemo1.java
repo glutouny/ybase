@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * @author 杨黎
- * @Title
+ * @Title   TestMessageDemo1
  * @description 网易云验证码测试
  * @DATE 2018/10/16  18:56
  */
@@ -35,7 +35,7 @@ public class TestMessageDemo1 {
     //短信模板ID
     private static final String TEMPLATEID="9334231";
     //手机号
-    private static final String MOBILE="15827556413";
+    private static final String MOBILE="17521139960";
     //验证码长度，范围4～10，默认为4
     private static final String CODELEN="6";
 
