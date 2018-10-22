@@ -16,9 +16,9 @@ import org.slf4j.LoggerFactory;
  * @description
  * @DATE 2018/10/18  14:22
  */
-public class ShiroTest11 {
+public class ShiroTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ShiroTest11.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShiroTest.class);
 
     public static void main(String[] args) {
         //1. 这里的SecurityManager是org.apache.shiro.mgt.SecurityManager         // 而不是java.lang.SecurityManager         // 加载配置文件
