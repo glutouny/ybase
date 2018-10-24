@@ -54,4 +54,8 @@
             </plugin>
         </plugins>
     </build>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ybase_shiro</module>
+    </modules>
 </project>
