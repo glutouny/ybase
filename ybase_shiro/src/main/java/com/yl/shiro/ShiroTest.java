@@ -29,7 +29,6 @@ public class ShiroTest {
          SecurityUtils.setSecurityManager(securityManager);
         // 安全操作，Subject是当前登录的用户
          Subject subject = SecurityUtils.getSubject();
-
         // 测试在应用的当前会话中设置属性
         Session session = subject.getSession();
         //放进去一个key和一个value
