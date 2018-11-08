@@ -39,6 +39,11 @@
             <artifactId>commons-email</artifactId>
             <version>1.4</version>
         </dependency>
+        <dependency>
+            <artifactId>spring-context</artifactId>
+            <groupId>org.springframework</groupId>
+            <version>4.3.13.RELEASE</version>
+        </dependency>
 
     </dependencies>
 
