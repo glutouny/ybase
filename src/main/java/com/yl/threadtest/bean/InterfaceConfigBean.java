@@ -1,23 +1,62 @@
-package com.yl.threadTest.bean;
+package com.yl.threadtest.bean;
 
 /**
  * Title InterfaceConfigBean
  * Description 接口配置Bean
- * author yangli
- * date 2018/10/16 09:27
+ * @author yangli
+ * @date 2018/10/16 09:27
  */
 public class InterfaceConfigBean {
 
-    private String code; //编码
-    private String resourceUrl; //访问的url
-    private String userName; //用户名
-    private String password; //密码
-    private String description; //接口名称
-    private Integer payload; //请求数量
-    private Integer threadNum; //并发数量
-    private String ip; //IP
-    private String port; //端口
-    private Boolean enabledFlag; //启用标识
+    /**
+     * 编码
+     */
+    private String code;
+
+    /**
+     * 访问的url
+     */
+    private String resourceUrl;
+
+    /**
+     * 用户名
+     */
+    private String userName;
+
+    /**
+     * 密码
+     */
+    private String password;
+
+    /**
+     * 接口名称
+     */
+    private String description;
+
+    /**
+     * 请求数量
+     */
+    private Integer payload;
+
+    /**
+     *  并发数量
+     */
+    private Integer threadNum;
+
+    /**
+     * IP
+     */
+    private String ip;
+
+    /**
+     * 端口
+     */
+    private String port;
+
+    /**
+     * 启用标识
+     */
+    private Boolean enabledFlag;
 
     public String getCode() {
         return code;
