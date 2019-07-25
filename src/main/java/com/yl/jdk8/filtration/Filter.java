@@ -29,6 +29,9 @@ public class Filter {
     }
 
     public static void main(String[] args) {
-
+        String conent = "【订单关联合同】:您有[1]张预借苗订单：[2]尚未关联合同，请及时关联并尽快确认开票。";
+        int count = 2;
+        String message = "0012345678（数量10）、30001653 （数量3000）";
+        System.out.println(conent.replace("[1]",String.valueOf(count)).replace("[2]",message));
     }
 }
