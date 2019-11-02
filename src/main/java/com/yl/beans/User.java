@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @description
  * @DATE 2018/12/14  15:38
  */
-public class User implements Serializable{
+public class User implements Serializable,Cloneable{
 
     private String username;
 
@@ -36,6 +36,25 @@ public class User implements Serializable{
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    @Override
+    public Object clone(){
+        Object obj = null;
+        try{
+            obj = super.clone();
+        }catch(CloneNotSupportedException ex){
+            ex.printStackTrace();
+        }
+        return obj;
     }
 }
 
