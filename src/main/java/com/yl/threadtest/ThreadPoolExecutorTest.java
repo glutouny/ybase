@@ -23,7 +23,7 @@ public class ThreadPoolExecutorTest {
 
     public static void main(String[] args) throws InterruptedException {
         // 阿里规约，不允许使用Executors来创建线程池。
-        ExecutorService executorService = new ThreadPoolExecutor(10,10,
+        ExecutorService executorService = new ThreadPoolExecutor(3, 3,
                 60L, TimeUnit.SECONDS,
                 new ArrayBlockingQueue<Runnable>(10));
         final int  a  = 100;
@@ -41,8 +41,8 @@ public class ThreadPoolExecutorTest {
             executorService.execute(r);
         }
         executorService.shutdown();
-        System.out.println(ThreadPoolExecutorTest.count);
-        Thread.sleep(10000);
-        System.out.println(ThreadPoolExecutorTest.count+"hh");
+        System.out.println(ThreadPoolExecutorTest.getCount());
+        Thread.sleep(3000);
+        System.out.println(ThreadPoolExecutorTest.getCount()+"hh");
     }
 }

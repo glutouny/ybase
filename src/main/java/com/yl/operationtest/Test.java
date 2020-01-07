@@ -2,6 +2,8 @@ package com.yl.operationtest;
 
 import com.yl.operationtest.impl.AdminRole;
 import com.yl.operationtest.impl.NormalRole;
+import com.yl.operationtest.impl.RoleEnum;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author yangli
@@ -12,10 +14,28 @@ import com.yl.operationtest.impl.NormalRole;
 public class Test {
 
     public static void main(String[] args) {
-        System.out.println(JudgeRole.judge("AdminRole"));
+//        System.out.println(testEnum());
+        testSubString();
+//        System.out.println(JudgeRole.judge("AdminRole"));
+//
+//        System.out.println(JudgeRole.judge2(new AdminRole("AdminRole")));
+//
+//        System.out.println(JudgeRole.judge2(new NormalRole("AdminRole")));
+    }
 
-        System.out.println(JudgeRole.judge2(new AdminRole("AdminRole")));
+    public static String testEnum() {
 
-        System.out.println(JudgeRole.judge2(new NormalRole("AdminRole")));
+        try {
+            return RoleEnum.valueOf("ADMIN1").op();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static void testSubString() {
+        String a = "aaaa";
+        StringUtils.substring(a,0,3);
+        System.out.println(a);
     }
 }

@@ -3,6 +3,8 @@ package com.yl.common.email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * @author 杨黎
  * @Title   TestHtmlEmail

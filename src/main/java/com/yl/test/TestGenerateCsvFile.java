@@ -15,15 +15,12 @@ public class TestGenerateCsvFile {
 
     public final static List<String> pluList = new ArrayList<String>(){
         {
-            add("2000133411764");
-            add("2000134462864");
-            add("2000131090794");
-            add("2000130344966");
-            add("2000131090855");
-            add("2000130345093");
-            add("2000133943081");
-            add("2000130344416");
-            add("2000130344577");
+//            2000123511085-----41365350007000
+//            2000123511290-----41365350008000
+//            2000123511306-----41365309007000
+            add("2000123511085");
+            add("2000123511290");
+            add("2000123511306");
         }
     };
 
@@ -102,8 +99,8 @@ public class TestGenerateCsvFile {
             //564938292860509397   1-错误转换
             //564948292860509397   1-退款单错误转换
             //564958292860509397   1-plu错误转换
-            String ecsEntryNo = "56495"+(a+i)+"1509397";
-            String ecsOrderId = "56495"+(a+i)+"0509397";
+            String ecsOrderId = "564950509377"+(a+i);
+            String ecsEntryNo = "564951509377"+(a+i);
 //            String status = "paid";
             data.add(ecsOrderId);
             data.add(ecsEntryNo);
@@ -120,9 +117,9 @@ public class TestGenerateCsvFile {
         for (int i = 100000;i < number; i++) {
             data = new ArrayList<>();
             //564928292860509397
-            String ecsOrderId = "56492"+(a+i)+"0509397";
-            String ecsEntryNo_1 = "56492"+(a+i)+"1509397";
-            String ecsEntryNo_2 = "56492"+(a+i)+"2509397";
+            String ecsOrderId = "564950509377"+(a+i);
+            String ecsEntryNo_1 = "564951509377"+(a+i);
+            String ecsEntryNo_2 = "564952509377"+(a+i);
 //            String status = "paid";
             data.add(ecsOrderId);
             data.add(ecsEntryNo_1);
@@ -138,14 +135,14 @@ public class TestGenerateCsvFile {
         List<Object>  data = null;
         int a = 1000000;
         int b = 100000;
-        for (int i = 0;i < 70000; i++) {
+        for (int i = 150000;i < 200000; i++) {
             data = new ArrayList<>();
             //34045062110509793     -0
             //34046062110509793     -1 错误转换
-            String return_order_id = "34046"+(b+i)+"509793";
+            String return_order_id = "340465092793"+(b+i);
             //564928292860509397
-            String ecsOrderId = "56494"+(a+i)+"0509397";
-            String ecsEntryNo = "56494"+(a+i)+"1509397";
+            String ecsOrderId = "564950509377"+(a+i);
+            String ecsEntryNo = "564951509377"+(a+i);
 
             data.add(return_order_id);
             data.add(ecsOrderId);
@@ -163,13 +160,14 @@ public class TestGenerateCsvFile {
             data = new ArrayList<>();
             //564928292860509397
             //564958292860509397  -plu错误数据转换
-             String ecsEntryNo = "56492"+(a+i)+"1509397";
-            String plu = (i % 9)+"a";
-            String ecsOrderId = "56492"+(a+i)+"0509397";
+            String msgId = "654950999377"+(a+i);
+            String ecsOrderId = "564950509377"+(a+i);
+            String ecsEntryNo = "564951509377"+(a+i);
+            data.add(msgId);
             data.add(status);
             data.add(ecsOrderId);
             data.add(ecsEntryNo);
-            data.add(plu);
+            data.add(pluList.get(i % 3));
             datalist.add(data);
         }
         return datalist;
@@ -180,14 +178,13 @@ public class TestGenerateCsvFile {
         List<List<Object>> datalist = new ArrayList<List<Object>>();
         List<Object>  data = null;
         int a = 1000000;
-        for (int i = 0;i < 70000; i++) {
+        for (int i = 0;i < 50000; i++) {
             data = new ArrayList<>();
             //564928292860509397
-            String ecsEntryNo = "56492"+(a+i)+"1509397";
-            String plu = (i % 9)+"a";
+            String ecsEntryNo = "564951509377"+(a+i);
             data.add(status);
             data.add(ecsEntryNo);
-            data.add(plu);
+            data.add(pluList.get(i % 3));
             datalist.add(data);
         }
         return datalist;
@@ -208,7 +205,7 @@ public class TestGenerateCsvFile {
 //        datalist = createOrderInsertData("PACKAGED",100000);
 //        fileName = "order_packaged";
 
-//        datalist = createOrderInsertData("success",100000);
+//        datalist = createOrderInsertData("success",50000);
 //        fileName = "order_success";
 //        -订单错误数据-56493
 //        datalist = createOrderInsertData("paid",70000);
@@ -222,11 +219,11 @@ public class TestGenerateCsvFile {
 //        fileName = "order_plu_error";
 
         //订单数据多行
-//          datalist = createOrderInsertData_2("paid",200000);
+//          datalist = createOrderInsertData_2("paid",150000);
 //          fileName = "multiOrder";
 //          datalist = createOrderInsertData_2("PACKAGED",200000);
 //          fileName = "multiOrder_packaged";
-//          datalist = createOrderInsertData_2("success",200000);
+//          datalist = createOrderInsertData_2("success",150000);
 //          fileName = "multiOrder_success";
 
 
@@ -241,18 +238,18 @@ public class TestGenerateCsvFile {
 
         //退款单数据
 //        String fulfillStatus = "PICKED";
-//        String fulfillStatus = "SHIPPING";
+////        String fulfillStatus = "SHIPPING";
 //        datalist = createPluInsertData(fulfillStatus,200000);
 //        fileName = "pluFulfill_"+fulfillStatus;
 
-//        String fulfillStatus = "ENTER_WAREHOUSE_SUCCESS";
-//                datalist = createPluInsertData_2(fulfillStatus,70000);
-//        fileName = "pluFulfill_"+fulfillStatus;
+        String fulfillStatus = "ENTER_WAREHOUSE_SUCCESS";
+                datalist = createPluInsertData_2(fulfillStatus);
+        fileName = "pluFulfill_"+fulfillStatus;
 
 //          错误数据 7w
-          String fulfillStatus = "PICKED";
-          datalist = createPluInsertData(fulfillStatus,70000);
-          fileName = "pluFulfill_error"+fulfillStatus;
+//          String fulfillStatus = "PICKED";
+//          datalist = createPluInsertData(fulfillStatus,70000);
+//          fileName = "pluFulfill_error"+fulfillStatus;
 
         String path = "d:/";
 

@@ -1,5 +1,7 @@
 package com.yl.threadtest;
 
+import java.util.concurrent.Callable;
+
 /**
  * @author 杨黎
  * @Title   RunnableTest
@@ -8,7 +10,7 @@ package com.yl.threadtest;
  */
 public class RunnableTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         final int a = 5;
         for (int i = 0; i < a; i++) {
             Thread thread = new Thread(new Runnable() {

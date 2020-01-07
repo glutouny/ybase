@@ -17,7 +17,7 @@ import java.util.function.Predicate;
 public class TestIterator {
 
     public static void main(String[] args) {
-        User user = new User("1","1");
+        User user = new User("2","1");
         User user1 = (User) user.clone();
         System.out.println(user.hashCode()+"===="+user1.hashCode());
 
@@ -27,9 +27,9 @@ public class TestIterator {
         Predicate<User> predicate = new Predicate<User>() {
             @Override
             public boolean test(User user) {
-                return "a".equals(user);
+                return "1".equals(user.getPassword());
             }
         };
-        System.out.println(predicate.test(user));
+        System.out.println(predicate.test(user1));
     }
 }
